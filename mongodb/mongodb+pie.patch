@@ -1,0 +1,22 @@
+diff --git a/SConstruct b/SConstruct
+index ceb9923..fd27fe0 100644
+--- a/SConstruct
++++ b/SConstruct
+@@ -692,7 +692,7 @@ if nix:
+ 
+     env.Append( CPPDEFINES=["_FILE_OFFSET_BITS=64"] )
+     env.Append( CXXFLAGS=["-Wnon-virtual-dtor", "-Woverloaded-virtual"] )
+-    env.Append( LINKFLAGS=["-fPIC", "-pthread",  "-rdynamic"] )
++    env.Append( LINKFLAGS=["-fPIC", "-pthread",  "-rdynamic", "-Wl,-z,relro", "-specs=/usr/lib/rpm/redhat/redhat-hardened-ld"])
+     env.Append( LIBS=[] )
+ 
+     #make scons colorgcc friendly
+@@ -713,7 +713,7 @@ if nix:
+         env.Append( CCFLAGS=["-O0", "-fstack-protector"] )
+         env['ENV']['GLIBCXX_FORCE_NEW'] = 1; # play nice with valgrind
+     else:
+-        env.Append( CCFLAGS=["-O3"] )
++        env.Append( CCFLAGS=["-O3", "-Wp,-D_FORTIFY_SOURCE=2", "-fexceptions", "-fstack-protector", "--param=ssp-buffer-size=4", "-specs=/usr/lib/rpm/redhat/redhat-hardened-cc1", "-m64" ,"-mtune=generic"] )
+ 
+     if debugLogging:
+         env.Append( CPPDEFINES=["_DEBUG"] );
