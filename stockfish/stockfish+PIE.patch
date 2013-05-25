@@ -1,0 +1,23 @@
+diff --git a/src/Makefile b/src/Makefile
+index b23d671..51b3445 100644
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -500,14 +500,14 @@ gcc-profile-prepare:
+ 
+ gcc-profile-make:
+ 	$(MAKE) ARCH=$(ARCH) COMP=$(COMP) \
+-	EXTRACXXFLAGS='-fprofile-generate' \
+-	EXTRALDFLAGS='-lgcov' \
++	EXTRACXXFLAGS='-fprofile-generate -FPIE' \
++	EXTRALDFLAGS='-lgcov -fPIE' \
+ 	all
+ 
+ gcc-profile-use:
+ 	$(MAKE) ARCH=$(ARCH) COMP=$(COMP) \
+-	EXTRACXXFLAGS='-fprofile-use' \
+-	EXTRALDFLAGS='-lgcov' \
++	EXTRACXXFLAGS='-fprofile-use -fPIE' \
++	EXTRALDFLAGS='-lgcov -pie' \
+ 	all
+ 
+ gcc-profile-clean:
