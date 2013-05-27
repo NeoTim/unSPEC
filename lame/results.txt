@@ -1,0 +1,22 @@
+no-PIE
+======
+
+➜  LAME  time lame -h pts-trondheim-3.wav > /dev/null 2>&1
+lame -h pts-trondheim-3.wav > /dev/null 2>&1  15.63s user 0.05s system 98% cpu 15.844 total
+➜  LAME  time lame -h pts-trondheim-3.wav > /dev/null 2>&1
+lame -h pts-trondheim-3.wav > /dev/null 2>&1  15.70s user 0.05s system 99% cpu 15.895 total
+➜  LAME  time lame -h pts-trondheim-3.wav > /dev/null 2>&1
+lame -h pts-trondheim-3.wav > /dev/null 2>&1  15.67s user 0.08s system 98% cpu 15.948 total
+➜  LAME  time lame -h pts-trondheim-3.wav > /dev/null 2>&1
+lame -h pts-trondheim-3.wav > /dev/null 2>&1  15.67s user 0.07s system 98% cpu 15.926 total
+
+PIE
+===
+
+➜  LAME  time lame -h pts-trondheim-3.wav > /dev/null 2>&1
+lame -h pts-trondheim-3.wav > /dev/null 2>&1  15.67s user 0.09s system 98% cpu 15.952 total
+➜  LAME  time lame -h pts-trondheim-3.wav > /dev/null 2>&1
+lame -h pts-trondheim-3.wav > /dev/null 2>&1  15.71s user 0.05s system 98% cpu 15.936 total
+➜  LAME  time lame -h pts-trondheim-3.wav > /dev/null 2>&1
+lame -h pts-trondheim-3.wav > /dev/null 2>&1  15.66s user 0.05s system 99% cpu 15.854 total
+
