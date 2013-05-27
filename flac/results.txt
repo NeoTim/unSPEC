@@ -1,0 +1,26 @@
+no-PIE
+======
+
+➜  LAME  time flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1
+flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1  6.15s user 0.04s system 98% cpu 6.273 total
+➜  LAME  time flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1
+flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1  6.14s user 0.02s system 99% cpu 6.208 total
+➜  LAME  time flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1
+flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1  6.13s user 0.02s system 99% cpu 6.189 total
+➜  LAME  time flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1
+flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1  6.18s user 0.03s system 99% cpu 6.255 total
+➜  LAME  time flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1
+flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1  6.14s user 0.03s system 99% cpu 6.210 total
+
+PIE
+===
+
+➜  LAME  time flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1
+flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1  6.12s user 0.02s system 99% cpu 6.181 total
+➜  LAME  time flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1
+flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1  6.13s user 0.03s system 99% cpu 6.211 total
+➜  LAME  time flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1
+flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1  6.17s user 0.03s system 99% cpu 6.254 total
+➜  LAME  time flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1
+flac -s --best --totally-silent pts-trondheim-3.wav -f -o /dev/null 2>&1  6.13s user 0.02s system 99% cpu 6.208 total
+
