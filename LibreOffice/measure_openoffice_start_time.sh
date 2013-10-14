@@ -73,19 +73,19 @@ fi
 
 START_TIME=`date +%s%N`
 #START_TIME=`get_time`
-echoerr "Start time: $START_TIME"
+#echoerr "Start time: $START_TIME"
 
-export LD_DEBUG=statistics
+# export LD_DEBUG=statistics  # XXX enable me for more goodness
 oowriter $OPENOFFICE_OPTIONS ./recordStart.odt &
 unset LD_DEBUG
-echo $RESULT_FILE
+#echo $RESULT_FILE
 while true; do
 	if [ -e "$RESULT_FILE" ]; then
 		if [ "$NO_WAIT_FOR_RESULTS" = "yes" ]; then
 			break
 		fi
 		#sleep a while as a workaround for race condition writing to output file
-		sleep 2
+		sleep 1
 		break
 	fi
 	sleep 0.2
@@ -97,7 +97,6 @@ END_TIME=$1
 #DIFFERENCE=`subtract_time $END_TIME $START_TIME`
 #DIFFERENCE=`subtract_time $END_TIME $START_TIME`
 
-echo "runtime: $(echo "scale=3;($END_TIME - $START_TIME)/(1*10^09)" | bc) seconds"
 
 #if [ "$TRACE_IO" = yes ]; then
 #	sudo killall blktrace
@@ -105,10 +104,11 @@ echo "runtime: $(echo "scale=3;($END_TIME - $START_TIME)/(1*10^09)" | bc) second
 
 echoerr "Start time: " $START_TIME
 echoerr "End time: " `cat "$RESULT_FILE"`
-echoerr "Difference: $DIFFERENCE"
+# echoerr "Difference: $DIFFERENCE"
+echoerr "Runtime: $(echo "scale=3;($END_TIME - $START_TIME)/(1*10^09)" | bc) seconds"
 #echoerr "IO ticks: $END_IO_TICKS"
 #echo "$DIFFERENCE $END_IO_TICKS #stamp: $STAMP #all: " "$@"
-echo "$DIFFERENCE #stamp: $STAMP"
+# echo "$DIFFERENCE #stamp: $STAMP"
 
 #rm -f "$RESULT_FILE" || failure "Cannot remove $RESULT_FILE, error=$?"
 
